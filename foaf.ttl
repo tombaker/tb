@@ -1,0 +1,22 @@
+@base         <http://tombaker.org/> .
+@prefix dc:   <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix cito: <http://purl.org/spar/cito> .
+
+<http://tombaker.org/#self> a foaf:Person ;
+  foaf:nick         "Tom" ;
+  foaf:name         "Thomas Baker" ;
+  foaf:mbox_sha1sum "adaabfc28db0e006fffcab5f45f8f8f1d16fc736" ;
+  foaf:account      <http://twitter.com/tombaker> ;
+  foaf:skypeID      "tbaker9957" ;
+  foaf:img <https://avatars0.githubusercontent.com/u/1106086?v=2&s=46://avatars0.githubusercontent.com/u/1106086?v=2&s=460> ;
+  foaf:workplaceHomepage <http://ischool.skku.edu> ;
+  foaf:account <https://www.linkedin.com/pub/tom-baker/1/8b7/9ab> .
+
+<http://dydra.com/bendiken/foaf> a foaf:PersonalProfileDocument ;
+  foaf:maker        <http://tombaker.org/#self> ;
+  foaf:primaryTopic <http://tombaker.org/#self> .
+
