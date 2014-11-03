@@ -16,7 +16,7 @@
   foaf:workplaceHomepage <http://ischool.skku.edu> ;
   foaf:account <https://www.linkedin.com/pub/tom-baker/1/8b7/9ab> .
 
-<http://dydra.com/bendiken/foaf> a foaf:PersonalProfileDocument ;
+<https://raw.githubusercontent.com/tombaker/tb/master/foaf.ttl> a foaf:PersonalProfileDocument ;
   foaf:maker        <http://tombaker.org/#self> ;
   foaf:primaryTopic <http://tombaker.org/#self> .
 
