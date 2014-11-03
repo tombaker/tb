@@ -7,16 +7,33 @@
 @prefix cito: <http://purl.org/spar/cito> .
 
 <http://tombaker.org/#self> a foaf:Person ;
-  foaf:nick         "Tom" ;
-  foaf:name         "Thomas Baker" ;
-  foaf:mbox_sha1sum "adaabfc28db0e006fffcab5f45f8f8f1d16fc736" ;
-  foaf:account      <http://twitter.com/tombaker> ;
-  foaf:skypeID      "tbaker9957" ;
-  foaf:img <https://avatars0.githubusercontent.com/u/1106086?v=2&s=46://avatars0.githubusercontent.com/u/1106086?v=2&s=460> ;
-  foaf:workplaceHomepage <http://ischool.skku.edu> ;
-  foaf:account <https://www.linkedin.com/pub/tom-baker/1/8b7/9ab> .
+    foaf:nick         "Tom" ;
+    foaf:name         "Thomas Baker" ;
+    foaf:mbox_sha1sum "adaabfc28db0e006fffcab5f45f8f8f1d16fc736" ;
+    foaf:account      <http://twitter.com/tombaker> ;
+    foaf:skypeID      "tbaker9957" ;
+    foaf:img <https://avatars0.githubusercontent.com/u/1106086?v=2&s=46://avatars0.githubusercontent.com/u/1106086?v=2&s=460> ;
+    foaf:workplaceHomepage <http://ischool.skku.edu> ;
+    foaf:account <https://www.linkedin.com/pub/tom-baker/1/8b7/9ab> .
 
 <https://raw.githubusercontent.com/tombaker/tb/master/foaf.ttl> a foaf:PersonalProfileDocument ;
-  foaf:maker        <http://tombaker.org/#self> ;
-  foaf:primaryTopic <http://tombaker.org/#self> .
+    foaf:maker        <http://tombaker.org/#self> ;
+    foaf:primaryTopic <http://tombaker.org/#self> .
 
+<http://tombaker.org/#self> 
+    foaf:knows <http://www.ivan-herman.net/foaf#me> ;
+    foaf:knows <http://danbri.org/foaf.rdf#danbri> ;
+    owl:differentFrom [
+        a :Person ;
+        foaf:img <http://photos1.blogger.com/img/42/1242/640/aautobaker.jpg> ;
+        foaf:isPrimaryTopicOf <http://amzn.com/B00LLOZX9C> ;
+        foaf:name "Tom Baker"@en
+    ] ;
+    foaf:based_near <http://dbpedia.org/resource/Seoul>, <http://dbpedia.org/page/Jongno_District>, [
+        a geop:Point ;
+        geop:lat "37.599444"^^<http://www.w3.org/2001/XMLSchema#float> ;
+        geop:long "126.9747222"^^<http://www.w3.org/2001/XMLSchema#float>
+    ] .
+
+<http://tombaker.org/#self> 
+    cito:likes <http://www.youtube.com/watch?v=7Rq8B11cOFs> .
