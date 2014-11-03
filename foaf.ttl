@@ -1,39 +1,69 @@
-@base         <http://tombaker.org/> .
-@prefix dc:   <http://purl.org/dc/terms/> .
-@prefix foaf: <http://xmlns.com/foaf/0.1/> .
-@prefix owl:  <http://www.w3.org/2002/07/owl#> .
-@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix cito: <http://purl.org/spar/cito> .
+@prefix :         <http://example.org/> .
+@prefix dc:       <http://purl.org/dc/terms/> .
+@prefix foaf:     <http://xmlns.com/foaf/0.1/> .
+@prefix owl:      <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:      <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:     <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix cito:     <http://purl.org/spar/cito/> .
+@prefix rel:      <http://purl.org/vocab/relationship/> .
+@prefix geop:     <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix teach:    <http://linkedscience.org/teach/ns/#> .
 
-<http://tombaker.org/#self> a foaf:Person ;
+<http://tombaker.org/#self> 
+    a foaf:Person ;
     foaf:nick         "Tom" ;
+    foaf:title        "Professor" ;
     foaf:name         "Thomas Baker" ;
     foaf:mbox_sha1sum "adaabfc28db0e006fffcab5f45f8f8f1d16fc736" ;
+    owl:sameAs        :adaabfc ;
     foaf:account      <http://twitter.com/tombaker> ;
     foaf:skypeID      "tbaker9957" ;
-    foaf:img <https://avatars0.githubusercontent.com/u/1106086?v=2&s=46://avatars0.githubusercontent.com/u/1106086?v=2&s=460> ;
+    foaf:img          <https://avatars0.githubusercontent.com/u/1106086?v=2&s=460> ;
     foaf:workplaceHomepage <http://ischool.skku.edu> ;
     foaf:account <https://www.linkedin.com/pub/tom-baker/1/8b7/9ab> .
 
-<https://raw.githubusercontent.com/tombaker/tb/master/foaf.ttl> a foaf:PersonalProfileDocument ;
+<https://raw.githubusercontent.com/tombaker/tb/master/foaf.ttl> 
+    a foaf:PersonalProfileDocument ;
     foaf:maker        <http://tombaker.org/#self> ;
     foaf:primaryTopic <http://tombaker.org/#self> .
 
-<http://tombaker.org/#self> 
+:adaabfc 
     foaf:knows <http://www.ivan-herman.net/foaf#me> ;
     foaf:knows <http://danbri.org/foaf.rdf#danbri> ;
+    foaf:knows [
+        a foaf:Person ;
+        foaf:title   "Professor" ;
+        foaf:name    "Sam Gyun Oh"@en ;
+        foaf:mbox_sha1sum "a6a16002a1baaf5fddf588f2f2c2aed5f70dfaac" ;
+        owl:sameAs   :a6a1600 
+    ] ;
+    rel:worksWith    :a6a1600 ;
     owl:differentFrom [
-        a :Person ;
+        a foaf:Person ;
         foaf:img <http://photos1.blogger.com/img/42/1242/640/aautobaker.jpg> ;
         foaf:isPrimaryTopicOf <http://amzn.com/B00LLOZX9C> ;
         foaf:name "Tom Baker"@en
     ] ;
-    foaf:based_near <http://dbpedia.org/resource/Seoul>, <http://dbpedia.org/page/Jongno_District>, [
+    foaf:based_near 
+        <http://dbpedia.org/resource/Seoul>, 
+        <http://dbpedia.org/page/Jongno_District>, 
+        [
         a geop:Point ;
         geop:lat "37.599444"^^<http://www.w3.org/2001/XMLSchema#float> ;
         geop:long "126.9747222"^^<http://www.w3.org/2001/XMLSchema#float>
-    ] .
+        ] 
+    .
 
-<http://tombaker.org/#self> 
-    cito:likes <http://www.youtube.com/watch?v=7Rq8B11cOFs> .
+:adaabfc 
+    cito:likes <http://www.youtube.com/watch?v=7Rq8B11cOFs> ;
+    cito:likes <http://en.wikipedia.org/wiki/Shinee> .
+
+:adaabfc teach:teacherOf :SemanticWebDesign .
+
+:SemanticWebDesign 
+    teach:studentGroup :Group1 ;
+    teach:studentGroup :Group2 ;
+    teach:studentGroup :Group3 ;
+    teach:studentGroup :Group4 .
+    # Note: teach:studentGroup rdfs:domain teach:Course; rdfs:range foaf:Group.
+
